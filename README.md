@@ -2,10 +2,10 @@
 OpenStack Newton and CEPH Storage TripleO Installation guide
 -------------------------------------------------------------
 
-
+```
 Installing the UnderCloud
 ===================================
-```
+
 Create non-root user.
 
 sudo useradd stack
