@@ -5,6 +5,7 @@ OpenStack Newton and CEPH Storage TripleO Installation guide
 
 Installing the UnderCloud
 ===================================
+---
 Create non-root user.
 
 sudo useradd stack
@@ -132,3 +133,4 @@ openstack subnet list
 
 
 Note: In this scenario CEPH storage server come up with different type of NIC cards, where NIC card name is different. So we did NIC mapping in network-environment file.
+---
