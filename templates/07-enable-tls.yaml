@@ -1,0 +1,25 @@
+# Use this environment to pass in certificates for SSL deployments.
+# For these values to take effect, one of the tls-endpoints-*.yaml environments
+# must also be used.
+parameter_defaults:
+  SSLCertificate: |
+    -----BEGIN CERTIFICATE-----
+    MIIFNzCCBB+gAwIBAgIQDRLHRM/8DfeNyBBm/olOfDANBgkqhkiG9w0BAQsFADBN
+    BgNVBAoTEkludGVyQ2xvdWQgTGltaXRlZDEcMBoGA1UEAwwTKi5pbnRlcmNsb3Vk
+    MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMScwJQYDVQQDEx5E
+    MjAxMDE5MTIwMDAwWjBYMQswCQYDVQQGEwJCRDEOMAwGA1UEBxMFRGhha2ExGzAZ
+    aWdpQ2VydCBTSEEyIFNlY3VyZSBTZXJ2ZXIgQ0EwHhcNMTcxMDEyMDAwMDAwWhcN
+    LmNvbS5iZDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN9giWHIGEsy
+    -----END CERTIFICATE-----
+
+  SSLIntermediateCertificate: ''
+  SSLKey: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEowIBAAKCAQEA32CJYcgYSzLm3mztvKeksHzSN7xl0LkX3raVc6Ml1tAq9EYr
+    uaYAEUVt4AYIxh9WiN6CmTF7RYsqQhX3IO0jkkhdfus34hkjsfkshfksdhfkjsdh
+    YHsgdtjejjgdjhjf73hshjskflonuejsjjf+vRGOF8b6g/9K0wT4O/SL13biVw2C
+    oSebQ5h1GPflAtagGPSkkF//ojTPchydQn33Wr0YEtBrreXOl+nf1VIOqVtl6K7X
+    -----END RSA PRIVATE KEY-----
+
+resource_registry:
+  OS::TripleO::NodeTLSData: /usr/share/openstack-tripleo-heat-templates/puppet/extraconfig/tls/tls-cert-inject.yaml

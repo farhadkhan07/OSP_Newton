@@ -1,0 +1,81 @@
+# Environment file demonstrating how to pre-assign IPs to all node types
+resource_registry:
+  # Port assignments for the Controller Role
+  OS::TripleO::Controller::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external_from_pool.yaml
+  OS::TripleO::Controller::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api_from_pool.yaml
+  OS::TripleO::Controller::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::Controller::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_mgmt_from_pool.yaml
+  OS::TripleO::Controller::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant_from_pool.yaml
+  OS::TripleO::Controller::Ports::ManagementPort: /usr/share/openstack-tripleo-heat-templates/network/ports/management_from_pool.yaml
+
+  # Port assignments for the Compute Role
+  OS::TripleO::Compute::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::Compute::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api_from_pool.yaml
+  OS::TripleO::Compute::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::Compute::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::Compute::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant_from_pool.yaml
+  OS::TripleO::Compute::Ports::ManagementPort: /usr/share/openstack-tripleo-heat-templates/network/ports/management_from_pool.yaml
+
+  # Port assignments for the ceph storage role
+  OS::TripleO::CephStorage::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::CephStorage::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_mgmt_from_pool.yaml
+  OS::TripleO::CephStorage::Ports::ManagementPort: /usr/share/openstack-tripleo-heat-templates/network/ports/management_from_pool.yaml
+parameter_defaults:
+  ControllerIPs:
+    # Each controller will get an IP from the lists below, first controller, first IP
+    external:
+    - 36.255.68.6
+    - 36.255.68.7
+    - 36.255.68.8
+    internal_api:
+    - 192.168.15.15
+    - 192.168.15.16
+    - 192.168.15.17
+    storage:
+    - 192.168.14.15
+    - 192.168.14.16
+    - 192.168.14.17
+    storage_mgmt:
+    - 192.168.12.15
+    - 192.168.12.16
+    - 192.168.12.17
+    tenant:
+    - 192.168.13.15
+    - 192.168.13.16
+    - 192.168.13.17
+    management:
+    - 192.168.16.15
+    - 192.168.16.16
+    - 192.168.16.17
+  NovaComputeIPs:
+    # Each compute will get an IP from the lists below, first compute, first IP
+    internal_api:
+    - 192.168.15.18
+    - 192.168.15.19
+    - 192.168.15.20
+    storage:
+    - 192.168.14.18
+    - 192.168.14.19
+    - 192.168.14.20
+    tenant:
+    - 192.168.13.18
+    - 192.168.13.19
+    - 192.168.13.20
+    management:
+    - 192.168.16.18
+    - 192.168.16.19
+    - 192.168.16.20
+    # Each ceph will get an IP from the lists below, first ceph, first IP
+  CephStorageIPs:
+    storage:
+    - 192.168.14.31
+    - 192.168.14.32
+    - 192.168.14.33
+    storage_mgmt:
+    - 192.168.12.31
+    - 192.168.12.32
+    - 192.168.12.33
+    management:
+    - 192.168.16.31
+    - 192.168.16.32
+    - 192.168.16.33

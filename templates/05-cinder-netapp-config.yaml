@@ -1,0 +1,18 @@
+# A Heat environment file which can be used to enable a
+# a Cinder NetApp backend, configured via puppet
+parameter_defaults:
+  ExtraConfig:
+    cinder::config::cinder_config:
+        solidfire/volume_driver:
+                value: cinder.volume.drivers.solidfire.SolidFireDriver
+        solidfire/san_ip:
+                value: 192.168.12.3
+        solidfire/san_login:
+                value: admin
+        solidfire/san_password:
+                value: PutYourPasswordHere
+        solidfire/volume_backend_name:
+                value: solidfire_SSD
+        solidfire/sf_emulate_512:
+                value: True
+    cinder_user_enabled_backends: ['solidfire_SSD']

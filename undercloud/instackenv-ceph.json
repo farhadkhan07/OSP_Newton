@@ -1,0 +1,41 @@
+{
+        "nodes":[
+        {
+         "mac":[
+             "00:1b:21:27:20:63"
+            ],
+        "name":"ceph1",
+        "capabilities":"boot_option:local,node:ceph-0",
+        "arch":"x86_64",
+        "pm_type":"pxe_ipmitool",
+        "pm_user":"root",
+        "pm_password":"YourPasswordHere",
+        "pm_addr":"192.168.10.234"
+        },
+        {
+         "mac":[
+             "12:00:1b:21:25:04"
+            ],
+        "name":"ceph2",
+        "capabilities":"boot_option:local,node:ceph-1",
+        "arch":"x86_64",
+        "pm_type":"pxe_ipmitool",
+        "pm_user":"root",
+        "pm_password":"YourPasswordHere",
+        "pm_addr":"192.168.10.235"
+        },
+        {
+         "mac":[
+             "ec:f4:bb:c3:c0:0c"
+            ],
+        "name":"ceph3",
+        "capabilities":"boot_option:local,node:ceph-2",
+        "arch":"x86_64",
+        "pm_type":"pxe_ipmitool",
+        "pm_user":"root",
+        "pm_password":"YourPasswordHere",
+        "pm_addr":"192.168.10.236"
+        }
+
+   ]
+}
