@@ -1,6 +1,5 @@
-# OSP_Newton TripleO, CEPH, NetApp SolidFire storage integration
-
-OpenStack Newton and Storage TripleO Installation guide
+# OSP_Newton
+OpenStack Newton and CEPH Storage TripleO Installation guide
 -------------------------------------------------------------
 
 
